@@ -1,43 +1,33 @@
-ultimo = 0
-fila1 = []
-fila2 = []
+ultimo = 10
+fila = list(range(1, ultimo + 1))
 
 while True:
-
-    print(f"\nExistem {len(fila1)} clientes na fila 1 e {len(fila2)} clientes na fila 2")
-    print(f"Fila 1 atual: {fila1}")
-    print(f"Fila 2 atual: {fila2}")
-    print("Digite F para adicionar um cliente ao final da fila 1 ou G para fila 2,")
-    print("ou A para realizar o atendimento da fila 1 ou B para fila 2.")
-    print("S para sair")
-
-    operacao = input("Operação (F, G, A, B ou S): ") #String
+    print(f"Existem {len(fila)} clientes na fila")
+    print("Fila atual:", fila)
+    print("Digite F para adicionar um cliente ao final da fila,")
+    print("ou A para realizar o atendimento. S para sair.")
+    operacao = input("Operacao (F, A ou S): ")
 
     x = 0
     sair = False
 
     while x < len(operacao):
-
-        if operacao[x] == "A" or operacao[x] == "F":
-            fila = fila1
-        else:
-            fila = fila2
-
-        if operacao[x] == "A" or operacao[x] == "B":
+        if operacao[x] == "A":
             if len(fila) > 0:
                 atendido = fila.pop(0)
-                print(f"Cliente {atendido} atendido")
+                print(f"Cliente {atendido} antendido.")
             else:
-                print("Fila vazia! Ninguém para atender.")
-        elif operacao[x] == "F" or operacao[x] == "G":
+                print("Fila vazia!")
+        elif operacao[x] == "F":
             ultimo += 1
             fila.append(ultimo)
         elif operacao[x] == "S":
             sair = True
             break
         else:
-            print("Operação inválida")
+            print("Operacao invalida.")
 
         x += 1
+
     if sair:
         break

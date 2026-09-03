@@ -1,3 +1,5 @@
+#Fila
+
 ultimo = 10
 fila = list(range(1, ultimo + 1))
 
@@ -13,7 +15,7 @@ while True:
     if operacao == "A":
 
         if len(fila) > 0:
-            atendido = fila.pop(0)
+            atendido = fila.pop(0) #Retirar o primeiro elemento da Fila
             print(f"Cliente {atendido} atendido")
             
         else:
